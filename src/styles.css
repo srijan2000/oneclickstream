@@ -148,6 +148,18 @@ a:active {
   font-size: 0.92rem;
 }
 
+.status-actions {
+  display: grid;
+  gap: 0.6rem;
+  margin-top: 0.9rem;
+}
+
+.status-note {
+  margin: 0.75rem 0 0;
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+}
+
 .status-card code,
 .empty-state code {
   padding: 0.12rem 0.35rem;
@@ -195,7 +207,8 @@ label {
   font-weight: 600;
 }
 
-input {
+input,
+select {
   width: 100%;
   border: 1px solid rgba(148, 163, 184, 0.22);
   border-radius: 1rem;
@@ -209,7 +222,12 @@ input::placeholder {
   color: rgba(182, 194, 212, 0.68);
 }
 
-input:focus {
+select {
+  appearance: none;
+}
+
+input:focus,
+select:focus {
   border-color: rgba(56, 189, 248, 0.6);
   box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.15);
 }
@@ -252,6 +270,16 @@ input:focus {
 
 .secondary-action {
   margin-top: 0.25rem;
+}
+
+.action-row {
+  display: grid;
+  gap: 0.6rem;
+  margin-top: 0.2rem;
+}
+
+.action-row-full {
+  margin-top: 0.4rem;
 }
 
 .message {
@@ -346,6 +374,12 @@ input:focus {
 
   .field-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .status-actions,
+  .action-row {
+    grid-template-columns: repeat(2, minmax(0, max-content));
+    justify-content: start;
   }
 
   .secondary-button {
